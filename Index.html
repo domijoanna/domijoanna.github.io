@@ -10,34 +10,95 @@
     box-sizing: border-box;
 }
 
+#special{
+    background-color: #ff0000;
+}
+
 body {
     font-family:Arial, Helvetica, sans-serif;
 }
 
 /*Style the header*/
-header {
+#header {
     background-color: #0000e6;
-    padding: 30px; /*afstand mellem tekst og kant af boks*/
+    padding: 25px; /*afstand mellem tekst og kant af boks*/
+    width: 100vw;
     text-align: center; /*placering på skærmen*/
-    font-size:30px; /*tekststørrelse*/
+    font: size 50%; /*tekststørrelse*/
     color: white;
+    margin: 0px;
+    left: 0%;
+    top: 0%;
+    position: fixed;
+    height: 30%;
+}
+
+
+
+/*To kolonner ved siden af hinanden*/
+#nav{ /*menu*/
+    width: 30%;
+    background: #ccc;
+    padding: 5vw;
+    margin: 0px;
+    height: 65%;
+    position: fixed;
+    left: 0vw;
+    top: 30%;
+}
+
+/*design af menu*/
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/*Brødtekst*/
+#article {
+    
+    padding: 20px;
+    width: 70%;
+    height: auto;
+    background-color: #f1f1f1;
+    /*margin: ;*/
+    top:30%;
+    
+    height: 65%;
+    right: 0vw;
+    position:fixed;
 
 }
 
-/*Style the heading*/
-h1 {
-    font-style: initial;
-    font-family: Helvetica;
-}
 
 /*Style the footer*/
 footer{
     background-color:#ff0000;
-    padding: 40 px;
+    width: 100%;
     text-align: center;
-    font-size: 25 px;
+    font-size: 10px;
     font-family:arial;
     color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height:5%;
+
+}
+
+/*for at boksene "stacks" oven på hinanden når skærmen bliver mindre frem for ved siden af hinanden*/
+@media (max-width: 600px){
+    nav, article{
+        width: 100%;
+        height: auto;
+
+    }
+
+
+}
+
+p.sider{
+    text-decoration: none;
+    text-decoration-color: #ff0000;
 }
 
 
@@ -46,19 +107,36 @@ footer{
 </head>
 
 <body>
-    <header>
+    <div id="header">
             <h1> GCP-rejse til Boston, USA </h1>
             <p>En guide til alt, hvad du skal vide inden turen går til Boston</p>
-    </header>
+    </div>
+    
+<section>
+    <div id="nav">
+        <ul class="sider">
+            <li><p><a href="Boston.html" style="text-decoration:none"> Boston</a></p></li>
+            <li><p><a href="TA.html" style="text-decoration:none"> Tabor Academy</a></p></li>
+            <li><p><a href="Andet.html" style="text-decoration:none">Andet</a></p></li>
+        </ul>
+    </div>
+    
 
-    <h1> Turen går til Boston</h1>
+    <div id="article">
+       <h1> Turen går til Boston</h1>
+        <p>Kære rysser, snart skal du til Boston og der er meget du nok gerne vil vide. Her er en guide til hvad du får brug for at vide</p>
+        <p>Du kommer blandt andet til at besøge <abbr title="Massachusets Institute of Technology">MIT</abbr> og Harvard. Udover det vil du opleve byen Boston </p>
+        <img src="lufthavn.jpg" alt="2017y i Københavns lufthavn på vej til Boston" style="width:48vw;height:30vw">
 
-    </h1>
-    <br>
-
-    <footer>
+    </div>
+    
+</section>       
+    
+<br>
+<footer>
             <p>Lavet af Dominika Utko, 2017y på Rysensteen Gymnasium</p>
     </footer>
+    
 </body>
 
 
